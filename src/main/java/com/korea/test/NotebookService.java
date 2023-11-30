@@ -32,4 +32,13 @@ public class NotebookService {
 
         return notebookRepository.save(notebook);
     }
+    public void delete(Long notebookId){
+        Notebook notebook = getNotebookById(notebookId);
+        notebookRepository.delete(notebook);
+    }
+    public void updateNotebookName(Long notebookId,String notebookName){
+        Notebook notebook = getNotebookById(notebookId);
+        notebook.setName(notebookName);
+        notebookRepository.save(notebook);
+    }
 }
